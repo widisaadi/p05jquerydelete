@@ -1,0 +1,108 @@
+
+<head>
+    <title>P05 Jquery FadeOut When Delete</title>
+  </head>
+  
+  <center><h1>Top 5 My friends</h1></center>
+  <hr>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
+  <style>
+    body {
+      font-family: "Vivaldi";
+      font-size: 20px;
+      background-color: rgb(255, 255, 255);
+    }
+  
+    tr {
+      background: rgb(139, 127, 247);
+      padding: 7px solid;
+      text-align: center;
+  
+    }
+    td {
+      background: rgb(211, 223, 253);
+      cursor: pointer;
+      padding: 7px solid;
+      text-align: center;
+    }
+    td:hover {
+      background: yellow;
+    }
+    .tabel1 {
+      width: 100%;
+      max-width: 700px;
+      margin: auto;
+  
+    }
+  </style>
+  
+  <table class="tabel1">
+    <tr>
+      <th>No</th>
+      <th>Nama</th>
+      <th>Alamat</th>
+      <th >Action</th>
+    </tr>
+    <tr id="row__1">
+      <td>1</td>
+      <td class="nama">Baratama Vian</td>
+      <td class="alamat">Kesinangan</td>
+      <td class="hapus" id="hapus__1">Hapus</td>
+    </tr>
+    <tr id="row__2">
+      <td>2</td>
+      <td class="nama">Fathur</td>
+      <td class="alamat">Gang Kigemu</td>
+      <td class="hapus" id="hapus__2">Hapus</td>
+    </tr>
+    <tr id="row__3">
+      <td>3</td>
+      <td class="nama">Rohmansyah</td>
+      <td class="alamat">Klayan</td>
+      <td class="hapus" id="hapus__3">Hapus</td>
+    </tr>
+    <tr id="row__4">
+      <td>4</td>
+      <td class="nama">Darmatullah</td>
+      <td class="alamat">Majalengka</td>
+      <td class="hapus " id="hapus__4">Hapus</td>
+    </tr>
+    <tr id="row__5">
+      <td>5</td>
+      <td class="nama">Setiawan Abdi</td>
+      <td class="alamat">Tegal</td>
+      <td class="hapus" id="hapus__5">Hapus</td>
+    </tr>
+  </table>
+  
+  <script>
+    $(document).ready(function(){
+   
+      $('.hapus').click(function(){
+        // alert(1)
+       let betul = confirm('Anda yakin ingin menghapusnya?');
+       if(!betul) return;
+  
+       let id = $(this).prop('id');
+       // alert(id);
+  
+  
+       let rid = id.split('__');
+       let baris_ke = rid[1];
+  
+       // alert(baris_ke);
+  
+       $('#row__'+baris_ke).slideUp()
+  
+  
+  
+       // alert('Anda Yakin?')
+  
+  
+      })
+  
+    })
+  </script>
+  
